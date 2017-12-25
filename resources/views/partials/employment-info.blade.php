@@ -64,10 +64,8 @@
                       I am unemployed !
                       </label>
                     </div>
-                    
-
-                    <button class="btn btn-primary smart-button" data-hash="welcome" data-completion="100%">Next</button>
-
+                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
                 </div>
             </div>
         </div>

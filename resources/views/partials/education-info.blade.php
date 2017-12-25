@@ -14,11 +14,7 @@
                       <label><input type="radio" name="tenth-class" value="0">
                       No
                       </label>
-                    </div>
-
-
-
-                    
+                    </div>                 
 
                     <div class="panel panel-success education-panel school hide">
                       <div class="panel-heading">School</div>
@@ -189,7 +185,8 @@
                       <label><input type="checkbox" value="" class="no-education">I didn't go to school !.</label>
                     </div>
 
-                    <button class="btn btn-primary smart-button" data-hash="health-info" data-completion="60%">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>
             </div>

@@ -27,7 +27,8 @@
                     <div class="checkbox">
                       <label><input type="checkbox" value="">I don't have any of these.</label>
                     </div>
-                    <button class="btn btn-primary smart-button" data-hash="address-info" data-completion="20%">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>
             </div>

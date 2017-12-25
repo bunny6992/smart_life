@@ -18,8 +18,6 @@
                       </label>
                     </div>
 
-                    
-
                     <div class="panel panel-success current-addr">
                       <div class="panel-heading">Current address</div>
                       <div class="panel-body">
@@ -140,7 +138,8 @@
                       <label><input type="checkbox" value="" class="no-home">I don't have home !.</label>
                     </div>
 
-                    <button class="btn btn-primary smart-button" data-hash="education-info" data-completion="40%">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>
             </div>

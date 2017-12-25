@@ -26,8 +26,6 @@
                       <input type="text" class="form-control" id="usr">
                     </div>
 
-
-
                     <div class="form-group">
                       <label class="">Cast</label>
                       <input type="text" class="form-control" id="usr">
@@ -41,7 +39,8 @@
                         <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
                         <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
 
-                    <button class="btn btn-primary smart-button" data-hash="identity-numbers" data-completion="20%">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>
             </div>
