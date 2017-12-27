@@ -36,7 +36,7 @@
                       <label><input type="checkbox" value="" class="no-home">Do you have any health inssurance policy ?</label>
                     </div>
 
-                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="saveHealthInfo()">Next</button>
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>

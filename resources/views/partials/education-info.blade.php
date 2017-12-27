@@ -14,7 +14,7 @@
                       <label><input type="radio" name="tenth-class" value="0">
                       No
                       </label>
-                    </div>                 
+                    </div>
 
                     <div class="panel panel-success education-panel school hide">
                       <div class="panel-heading">School</div>
@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="panel panel-success education-panel institute hide">
-                      
+
                       <div class="panel-heading">Institute</div>
                       <div class="panel-body">
 
@@ -159,7 +159,7 @@
                           <div class="form-group">
                             <label for="sel1">Corse name:</label>
                             <input type="text" class="form-control" id="usr">
-                            
+
                           </div>
                         </div>
                         <div class="col-sm-6">
@@ -179,13 +179,13 @@
                       </div>
                     </div>
 
-                    
+
 
                     <div class="checkbox">
                       <label><input type="checkbox" value="" class="no-education">I didn't go to school !.</label>
                     </div>
 
-                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="saveEducationInfo()">Next</button>
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>

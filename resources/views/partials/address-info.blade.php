@@ -138,7 +138,7 @@
                       <label><input type="checkbox" value="" class="no-home">I don't have home !.</label>
                     </div>
 
-                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="saveAddressInfo()">Next</button>
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>

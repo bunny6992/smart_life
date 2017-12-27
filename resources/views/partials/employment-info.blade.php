@@ -18,9 +18,9 @@
                         <option>Enterprenuer</option>
                       </select>
                     </div>
-  
+
                     </div>
-                    
+
                     <div class="col-sm-4">
                       <div class=" form-group">
                             <label class="">Company name:</label>
@@ -34,7 +34,7 @@
                           </div>
                     </div>
                     <div class="col-sm-4">
-                      
+
                       <div class=" form-group">
                             <label class="">country:</label>
                             <input type="text" class="form-control" id="usr">
@@ -42,14 +42,14 @@
                     </div>
 
                     <div class="col-sm-6">
-                      
+
                       <div class=" form-group">
                             <label class="">Professional experiance:</label>
                             <input type="number" class="form-control" id="usr">
                           </div>
                     </div>
                     <div class="col-sm-6">
-                      
+
                       <div class=" form-group">
                             <label class="">Yearly income:</label>
                             <input type="text" class="form-control" id="usr">
@@ -64,7 +64,7 @@
                       I am unemployed !
                       </label>
                     </div>
-                    <button class="btn btn-primary smart-button pull-right" @click="pageNo++">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="saveEmploymentInfo()">Next</button>
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
                 </div>
             </div>
