@@ -26,13 +26,13 @@
             </div>
             <div v-if="pageNo == 4">
                 @include('partials.education-info')
-            </div>
+            </div>     
             <div v-if="pageNo == 5">
-                @include('partials.health-info')
-            </div>        
-            <div v-if="pageNo == 6">
                 @include('partials.employment-info')
             </div>
+            <div v-if="pageNo == 6">
+                @include('partials.health-info')
+            </div>   
         </div>
     </public-info >
 </div>

@@ -3,10 +3,11 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-6">
+                <form onsubmit="return false">
                     <h2>Tell us about yourself.</h2>
                     <div class=" form-group">
                       <label class="">First name:</label>
-                      <input type="text" class="form-control" v-model="basicInfo.firstName">
+                      <input type="text" id="firstname" class="form-control" v-model="basicInfo.firstName"  data-validation="length alphanumeric" data-validation-length="min4">
                     </div>
 
                     <div class="form-group">
@@ -19,33 +20,30 @@
 
                       <input type="text" class="form-control" v-model="basicInfo.lastName">
                     </div>
-
-                    <div class="form-group">
-                      <label class="">Religion</label>
-
-                      <input type="text" class="form-control" id="usr" v-model="basicInfo.religion">
+                    <div class=" form-group">
+                      <label class="">Voting card number:</label>
+                      <input type="text" class="form-control" v-model="basicInfo.votingId">
                     </div>
 
                     <div class="form-group">
-                      <label class="">Caste</label>
-                      <input type="text" class="form-control" id="usr" v-model="basicInfo.caste">
+                      <label class="">Adhar card number:</label>
+                      <input type="text" class="form-control" v-model="basicInfo.aadharId">
                     </div>
-                    <div class="form-group">
-                      <label class="">Sub-Caste</label>
-                      <input type="text" class="form-control" id="usr" v-model="basicInfo.subCaste">
-                    </div>
-                    <div class="input-group form-group">
-                      <span class="input-group-addon bwhite">Date of birth</span>
-                       <input type="date" name="" class="form-control" v-model="basicInfo.dob">
-                    </div>
-                      <label for="usr">Gender</label>
-                      <label class="radio-inline"><input type="radio" name="optradio" v-model="basicInfo.gender" value="male">Option 1</label>
-                      <label class="radio-inline"><input type="radio" name="optradio" v-model="basicInfo.gender" value="female">Option 2</label>
-                      <label class="radio-inline"><input type="radio" name="optradio" v-model="basicInfo.gender" value="transgender">Option 3</label>
 
-                    <button class="btn btn-primary smart-button pull-right" @click="saveBasicInfo()">Next</button>
+                    <div class="form-group">
+                      <label class="">PAN card number:</label>
+
+                      <input type="text" class="form-control" v-model="basicInfo.panId">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="">Passport number:</label>
+                      <input type="text" class="form-control" v-model="basicInfo.passportId">
+                    </div>
+                    <label><input type="checkbox" v-model="basicInfo.identity">I don't have any identity document.</label>
+                    <input class="btn btn-primary smart-button pull-right" type="submit" @click="saveBasicInfo()">
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
-
+                  </form>
                 </div>
             </div>
         </div>

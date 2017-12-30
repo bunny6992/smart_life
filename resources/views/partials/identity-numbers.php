@@ -4,30 +4,31 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h2>Tell us about your national identity numbers.</h2>
-                    <div class=" form-group">
-                      <label class="">Voting card number:</label>
-                      <input type="text" class="form-control" v-model="identityNumbers.votingId">
+                    <div class="form-group">
+                      <label class="">Religion</label>
+
+                      <input type="text" class="form-control" id="usr" v-model="moreInfo.religion">
                     </div>
 
                     <div class="form-group">
-                      <label class="">Adhar card number:</label>
-                      <input type="text" class="form-control" v-model="identityNumbers.aadharId">
+                      <label class="">Caste</label>
+                      <input type="text" class="form-control" id="usr" v-model="moreInfo.caste">
                     </div>
-
                     <div class="form-group">
-                      <label class="">PAN card number:</label>
-
-                      <input type="text" class="form-control" v-model="identityNumbers.panId">
+                      <label class="">Sub-Caste</label>
+                      <input type="text" class="form-control" id="usr" v-model="moreInfo.subCaste">
                     </div>
-
-                    <div class="form-group">
-                      <label class="">Passport number:</label>
-                      <input type="text" class="form-control" v-model="identityNumbers.passportId">
+                    <div class="input-group form-group">
+                      <span class="input-group-addon bwhite">Date of birth</span>
+                       <input type="date" name="" class="form-control" v-model="moreInfo.dob">
                     </div>
+                      <label for="usr">Gender</label>
+                      <label class="radio-inline"><input type="radio" name="optradio" v-model="moreInfo.gender" value="male">Option 1</label>
+                      <label class="radio-inline"><input type="radio" name="optradio" v-model="moreInfo.gender" value="female">Option 2</label>
+                      <label class="radio-inline"><input type="radio" name="optradio" v-model="moreInfo.gender" value="transgender">Option 3</label>
                     <div class="checkbox">
-                      <label><input type="checkbox" v-model="identityNumbers.homeless">I don't have any of these.</label>
                     </div>
-                    <button class="btn btn-primary smart-button pull-right" @click="saveIdentityNumbers">Next</button>
+                    <button class="btn btn-primary smart-button pull-right" @click="saveMoreInfo">Next</button>
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
 
                 </div>

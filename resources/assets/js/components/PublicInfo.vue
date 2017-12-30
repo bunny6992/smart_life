@@ -10,30 +10,85 @@
                 educationInfo: {},
                 employmentInfo: {},
                 healthInfo: {},
-                identityNumbers: {}
+                moreInfo: {},
+                routes: {}
             }
         },
         mounted() {
-            console.log('Component mounted.')
+            this.routes = {
+                basicInfo: {
+                    next: "more-info"
+                },
+                moreInfo: {
+                    next: "address-info",
+                    prev: "basic-info"
+                },
+                addressInfo: {
+                    next: "education-info",
+                    prev: "more-info"
+                },
+                educationInfo: {
+                    next: "employment-info",
+                    prev: "address-info"
+                },
+                employmentInfo: {
+                    next: "health-info",
+                    prev: "education-info"
+                },
+                healthInfo: {
+                    prev: "employment-info"
+                }
+            };
+
         },
         methods: {
             saveAddressInfo () {
                 this.pageNo++;
             },
             saveBasicInfo () {
-                this.pageNo++;
+                this.saveAndNext(this.routes.basicInfo.next, this.basicInfo);
             },
             saveEducationInfo () {
-                this.pageNo++;
+                this.saveAndNext(this.routes.educationInfo.next);
             },
              saveEmploymentInfo () {
-                this.pageNo++;
+                this.saveAndNext(this.routes.employmentInfo.next);
             },
             saveHealthInfo () {
-                this.pageNo++;
+                this.saveAndNext(this.routes.healthInfo.next);
             },
-            saveIdentityNumbers () {
-                this.pageNo++;
+            saveMoreInfo () {
+                this.saveAndNext(this.routes.moreInfo.next);
+            },
+
+            saveAndNext (hash, data) {
+                $.validate({
+                    lang: 'en'
+                });
+                setTimeout( () => {
+                    var error = false;
+                    $(".form-group").each(function( index ) {
+                      if($( this ).hasClass('has-error')){
+                        error = true;
+                      }
+                    });
+                    if (!error) {
+                        this.saveData(hash, data);
+                    }
+                }, 100);
+            },
+
+            saveData (hash, data) {
+                data.pageNo = this.pageNo;
+                axios.post('/saveData', data)
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+                // this.pageNo++;
+                // window.location.hash = hash;
             }
         }
     }

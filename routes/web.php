@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/information/welcome', 'SmartController@index')->name('information-welcome');
+Route::post('/saveData', 'SmartController@saveData')->name('save-data');
+
