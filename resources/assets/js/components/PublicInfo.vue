@@ -4,6 +4,7 @@
         data: () => {
             return {
                 pageNo: 0,
+                personId: '',
                 mode: '',
                 addressInfo: {},
                 basicInfo: {},
@@ -80,13 +81,16 @@
 
             saveData (hash, data) {
                 data.pageNo = this.pageNo;
+                data.personId = this.personId;
                 axios.post('/saveData', data)
-                  .then(function (response) {
-                    console.log(response);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
+                    .then((response) => {
+                        if (response.data.success) {
+                            this.personId =  response.data.person.id;
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 // this.pageNo++;
                 // window.location.hash = hash;
             }

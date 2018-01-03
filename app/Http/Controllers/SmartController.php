@@ -31,32 +31,37 @@ class SmartController extends Controller
 
     public function saveData (Request $request)
     {
-        $returnData = '';
+        $returnData = ['success' => false];
         switch ($request->input('pageNo')) {
             case '1':
                 $person = new Persons;
-                $person->first_name = 'firstName';
-                $person->last_name = 'lastName';
-                $person->middle_name = 'middleName';
+                $person->first_name = $request->input('firstName');
+                $person->last_name = $request->input('lastName');
+                $person->middle_name = $request->input('middleName');
                 if (!$request->input('identity')) {
-                    $person->aadhar_id = 'aadharId';
-                    $person->voting_id = 'votingId';
-                    $person->pan_id = 'panId';
-                    $person->diriving_license_id = 'dirivingLicenseId';
-                    $person->passport_id = 'passportId';
+                    $person->aadhar_id = $request->input('aadharId');
+                    $person->voting_id = $request->input('votingId');
+                    $person->pan_id = $request->input('panId');
+                    $person->diriving_license_id = $request->input('dirivingLicenseId');
+                    $person->passport_id = $request->input('passportId');
                 }
-                $returnData = $person->save();
+                if ($person->save()) {
+                    $returnData['success'] = true;
+                    $returnData['person'] = $person;
+                }
                 break;
             case '2':
-                if ($request->input('person_id')) {
-                    $person = Persons::find($request->input('person_id'));
+                if ($request->input('personId')) {
+                    $person = Persons::find($request->input('personId'));
                     if (!empty($person)) {
                         $person->religion = $request->input('religion');
                         $person->caste = $request->input('caste');
                         $person->sub_caste = $request->input('subCaste');
                         $person->gender = $request->input('gender');
                         $person->dob = $request->input('dob');
-                        $returnData = $person->save();
+                        if ($person->save()) {
+                            $returnData['success'] = true;
+                        }
                     }
                 }
                 break;
