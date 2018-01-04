@@ -6,8 +6,15 @@
                 pageNo: 0,
                 personId: '',
                 mode: '',
-                addressInfo: {},
-                basicInfo: {},
+                addressInfo: {
+                    sameAddress: 0,
+                    noHome: 0,
+                    current: {},
+                    home: {}
+                },
+                basicInfo: {
+                    noId: 0
+                },
                 educationInfo: {},
                 employmentInfo: {},
                 healthInfo: {},
@@ -44,22 +51,22 @@
         },
         methods: {
             saveAddressInfo () {
-                this.pageNo++;
+                this.saveAndNext(this.routes.basicInfo.next, this.addressInfo);
             },
             saveBasicInfo () {
                 this.saveAndNext(this.routes.basicInfo.next, this.basicInfo);
             },
             saveEducationInfo () {
-                this.saveAndNext(this.routes.educationInfo.next);
+                this.saveAndNext(this.routes.educationInfo.next, this.educationInfo);
             },
              saveEmploymentInfo () {
-                this.saveAndNext(this.routes.employmentInfo.next);
+                this.saveAndNext(this.routes.employmentInfo.next, this.employmentInfo);
             },
             saveHealthInfo () {
-                this.saveAndNext(this.routes.healthInfo.next);
+                this.saveAndNext(this.routes.healthInfo.next, this.healthInfo);
             },
             saveMoreInfo () {
-                this.saveAndNext(this.routes.moreInfo.next);
+                this.saveAndNext(this.routes.moreInfo.next, this.moreInfo);
             },
 
             saveAndNext (hash, data) {
@@ -85,7 +92,9 @@
                 axios.post('/saveData', data)
                     .then((response) => {
                         if (response.data.success) {
-                            this.personId =  response.data.person.id;
+                            if (response.data.person.id) {
+                                this.personId =  response.data.person.id;
+                            }
                         }
                     })
                     .catch(function (error) {

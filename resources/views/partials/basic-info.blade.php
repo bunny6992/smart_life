@@ -20,27 +20,29 @@
 
                       <input type="text" class="form-control" v-model="basicInfo.lastName">
                     </div>
-                    <div class=" form-group">
-                      <label class="">Voting card number:</label>
-                      <input type="text" class="form-control" v-model="basicInfo.votingId">
-                    </div>
+                    <div class="id-numbers" v-if="! basicInfo.noId">
+                      <div class=" form-group">
+                        <label class="">Voting card number:</label>
+                        <input type="text" class="form-control" v-model="basicInfo.votingId">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="">Adhar card number:</label>
-                      <input type="text" class="form-control" v-model="basicInfo.aadharId">
-                    </div>
+                      <div class="form-group">
+                        <label class="">Adhar card number:</label>
+                        <input type="text" class="form-control" v-model="basicInfo.aadharId">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="">PAN card number:</label>
+                      <div class="form-group">
+                        <label class="">PAN card number:</label>
 
-                      <input type="text" class="form-control" v-model="basicInfo.panId">
-                    </div>
+                        <input type="text" class="form-control" v-model="basicInfo.panId">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="">Passport number:</label>
-                      <input type="text" class="form-control" v-model="basicInfo.passportId">
+                      <div class="form-group">
+                        <label class="">Passport number:</label>
+                        <input type="text" class="form-control" v-model="basicInfo.passportId">
+                      </div>
                     </div>
-                    <label><input type="checkbox" v-model="basicInfo.identity">I don't have any identity document.</label>
+                    <label><input type="checkbox" v-model="basicInfo.noId">I don't have any identity document.</label>
                     <input class="btn btn-primary smart-button pull-right" type="submit" @click="saveBasicInfo()">
                     <button class="btn btn-primary smart-button" @click="pageNo--">Prev</button>
                   </form>
